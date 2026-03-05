@@ -30,10 +30,10 @@ const Navbar = () => {
                     {token ? (
                         <div className={styles.userSection}>
                             <span className={styles.userInfo}>
-                                <User size={20} className={styles.userIcon}/> {user?.name}
+                                <User size={20} className={styles.userIcon}/> <span>{user?.name}</span>
                             </span>
                             <button onClick={handleLogout} className={styles.logoutBtn}>
-                                <LogOut size={16} /> Logout
+                                <LogOut size={16} /> <span>Logout</span>
                             </button>
                         </div>
                     ) : (

@@ -151,3 +151,86 @@
   box-shadow: 0 0 25px rgba(255, 70, 37, 0.7);
   transform: skewX(-10deg) scale(1.05);
 }
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .logoIcon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .navLinks {
+    gap: 1rem;
+  }
+  
+  .link {
+    font-size: 1rem;
+  }
+  
+  /* Hide the text "Discussions" on very small screens, just show an icon if we had one, or keep it small */
+  
+  .authButtons {
+    gap: 1rem;
+    padding-left: 1rem;
+  }
+  
+  .loginBtn {
+    font-size: 1rem;
+  }
+  
+  .signupBtn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .userSection {
+    gap: 1rem;
+    padding-left: 1rem;
+  }
+  
+  .userInfo {
+    font-size: 1rem;
+  }
+  
+  .userInfo span {
+    display: none; /* We will add a span around the name in JSX to hide it on mobile, showing only icon */
+  }
+  
+  .logoutBtn {
+    padding: 0.5rem;
+    font-size: 0; /* Hide text, keep icon */
+  }
+  
+  .logoutBtn svg {
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+  }
+  
+  .navLinks {
+    gap: 0.5rem;
+  }
+  
+  .authButtons {
+    gap: 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 1px solid var(--surface-border);
+  }
+  
+  .signupBtn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}

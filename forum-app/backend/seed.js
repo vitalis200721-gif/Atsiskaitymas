@@ -34,47 +34,47 @@ const seedDB = async () => {
 
         // Question Data template
         const questionData = [
-            { text: "What are the best new features in React 19?", tags: ['react', 'frontend', 'javascript'], user: u1, views: 1250, likes: [u2, u3, u4], answers: [
-                { text: "The new compiler is amazing. Automatic memoization saves so much time.", user: u2, likes: [u1, u3] },
-                { text: "I'm mostly excited for the new `use` hook to handle promises easily.", user: u5, likes: [u4] }
+            { text: "What's the absolute best point guard build in NBA 2K26?", tags: ['builds', 'mycareer', 'pg'], user: u1, views: 1250, likes: [u2, u3, u4], answers: [
+                { text: "Go for a 6'6 2-Way Playmaker. Max out speed and perimeter defense.", user: u2, likes: [u1, u3] },
+                { text: "I prefer a smaller 6'2 sharp. The new shooting mechanics reward high 3pt rating.", user: u5, likes: [u4] }
             ]},
-            { text: "How do I securely store JWT tokens in a React application?", tags: ['security', 'jwt', 'auth'], user: u2, views: 890, likes: [u1, u5], answers: [
-                { text: "HTTP-only cookies are generally the safest approach against XSS.", user: u3, likes: [u1, u2] }
+            { text: "How do I fix the 'Connection to Server Lost' error in the City?", tags: ['support', 'servers', 'error'], user: u2, views: 890, likes: [u1, u5], answers: [
+                { text: "Try changing your DNS to 8.8.8.8 on your console. Usually helps for 2K servers.", user: u3, likes: [u1, u2] }
             ]},
-            { text: "What's the best way to handle global state without Redux?", tags: ['react', 'state-management'], user: u3, views: 3400, likes: [u1, u2, u4, u5], answers: [
-                { text: "Zustand is incredibly lightweight and easy to use.", user: u4, likes: [u3, u5] },
-                { text: "Context API + useReducer is native and works well for medium apps.", user: u1, likes: [] }
+            { text: "Anyone else struggling with the new shot meter?", tags: ['gameplay', 'shooting'], user: u3, views: 3400, likes: [u1, u2, u4, u5], answers: [
+                { text: "Turn it off entirely! You get a boost to your green window if you shoot without the meter.", user: u4, likes: [u3, u5] },
+                { text: "Yeah, it feels really delayed online compared to MyCareer.", user: u1, likes: [] }
             ]},
-            { text: "How to optimize Next.js App Router performance?", tags: ['nextjs', 'performance'], user: u4, views: 560, likes: [u3], answers: [] },
-            { text: "Any tips for building games using Three.js?", tags: ['threejs', 'gamedev', 'javascript'], user: u5, views: 2100, likes: [u1, u2], answers: [
-                { text: "Keep draw calls to a minimum and use instanced meshes where possible.", user: u1, likes: [u2, u4, u5] }
+            { text: "Which jumpshot base is the fastest for guards this year?", tags: ['jumpshots', 'animations'], user: u4, views: 560, likes: [u3], answers: [] },
+            { text: "Tips for getting defensive stopper badges fast?", tags: ['badges', 'grinding', 'defense'], user: u5, views: 2100, likes: [u1, u2], answers: [
+                { text: "Play intense defense in the Rec. Good shot contests give huge badge points.", user: u1, likes: [u2, u4, u5] }
             ]},
-            { text: "What is the difference between Prisma and Drizzle ORM?", tags: ['database', 'nodejs', 'orm'], user: u1, views: 430, likes: [u5], answers: [
-                { text: "Prisma uses a custom schema language and Rust engine. Drizzle is purely TypeScript and SQL-like.", user: u5, likes: [u1] }
+            { text: "Is the legendary edition worth the extra VC?", tags: ['discussion', 'vc', 'purchases'], user: u1, views: 430, likes: [u5], answers: [
+                { text: "Only if you plan on grinding MyTeam immediately. Otherwise, just buy the base game and save your money.", user: u5, likes: [u1] }
             ]},
-            { text: "How to implement Server-Sent Events (SSE) in Node.js?", tags: ['nodejs', 'sse', 'backend'], user: u2, views: 320, likes: [], answers: [] },
-            { text: "Best practices for writing accessible HTML in 2026?", tags: ['html', 'accessibility', 'a11y'], user: u3, views: 950, likes: [u1, u2], answers: [
-                { text: "Always use semantic tags and ensure proper aria-labels when custom elements are built.", user: u4, likes: [u3] }
+            { text: "When does Season 3 officially start?", tags: ['seasons', 'news'], user: u2, views: 320, likes: [], answers: [] },
+            { text: "Best dribble moves for a 6'8 SF?", tags: ['animations', 'dribbling'], user: u3, views: 950, likes: [u1, u2], answers: [
+                { text: "LeBron size-up and Magic Johnson crossover. Unstoppable.", user: u4, likes: [u3] }
             ]},
-            { text: "Why is my useEffect running twice in development?", tags: ['react', 'hooks'], user: u4, views: 8800, likes: [u1, u2, u3, u5], answers: [
-                { text: "That is intended behavior in React StrictMode to help find side-effect bugs.", user: u1, likes: [u2, u3, u4] }
+            { text: "Why am I getting put at Center when my build is a Power Forward?", tags: ['rec', 'matchmaking'], user: u4, views: 8800, likes: [u1, u2, u3, u5], answers: [
+                { text: "Matchmaking in the Rec prioritizes finding 5 players over perfect positions. If there's no true C, you slide down.", user: u1, likes: [u2, u3, u4] }
             ]},
-            { text: "How does the virtual DOM actually work under the hood?", tags: ['react', 'architecture'], user: u5, views: 1100, likes: [u2, u4], answers: [] },
-            { text: "Is Tailwind CSS losing popularity to CSS Modules?", tags: ['css', 'styling', 'discussion'], user: u1, views: 5040, likes: [u3, u4, u5], answers: [
-                { text: "Not really, but CSS Modules provide better encapsulation for some huge enterprise projects.", user: u2, likes: [u1] },
-                { text: "Both are great. It's just flavor. But CSS Modules are super solid.", user: u3, likes: [] }
+            { text: "Who is the hardest historical team to beat in Domination?", tags: ['myteam', 'domination'], user: u5, views: 1100, likes: [u2, u4], answers: [] },
+            { text: "Did they globally nerf steals in the latest patch?", tags: ['patch-notes', 'defense', 'gameplay'], user: u1, views: 5040, likes: [u3, u4, u5], answers: [
+                { text: "Yes, interceptor badge requirements were raised and lunges drain more stamina now.", user: u2, likes: [u1] },
+                { text: "Finally! Passing lane steals were way too overpowered.", user: u3, likes: [] }
             ]},
-            { text: "How to handle real-time multiplayer networking in a web browser?", tags: ['websockets', 'gamedev', 'networking'], user: u2, views: 420, likes: [u5], answers: [
-                { text: "Look into WebRTC for low latency peer-to-peer data channels.", user: u5, likes: [u1, u2] }
+            { text: "What's the best strategy for Pro-Am 5v5 defense?", tags: ['pro-am', 'strategy'], user: u2, views: 420, likes: [u5], answers: [
+                { text: "2-3 Zone is still king if you have a fast lock up top.", user: u5, likes: [u1, u2] }
             ]},
-            { text: "What are React Server Components (RSC) solving?", tags: ['react', 'server-components'], user: u3, views: 1800, likes: [u1, u2], answers: [] },
-            { text: "How to properly define TypeScript interfaces for highly nested API responses?", tags: ['typescript', 'api'], user: u4, views: 670, likes: [u1], answers: [
-                { text: "Use utility types like `Record` or extract nested types into their own interfaces.", user: u3, likes: [u4] }
+            { text: "How to effectively use the post-spin technician badge?", tags: ['badges', 'post-scoring'], user: u3, views: 1800, likes: [u1, u2], answers: [] },
+            { text: "Can you transfer VC from 2K25 to 2K26?", tags: ['vc', 'support'], user: u4, views: 670, likes: [u1], answers: [
+                { text: "Nope, VC has never been transferable between different years.", user: u3, likes: [u4] }
             ]},
-            { text: "Should I learn Rust for backend web development?", tags: ['rust', 'backend', 'career'], user: u5, views: 15000, likes: [u1, u2, u3, u4], answers: [
-                { text: "If you need insane performance or memory safety, yes. Otherwise, Go or Node might be faster to write.", user: u1, likes: [u2, u3, u5] },
-                { text: "It has a steep learning curve, but frameworks like Axum are incredible.", user: u4, likes: [u1, u5] },
-                { text: "Yes, it is the future.", user: u2, likes: [] }
+            { text: "Looking for a squad to run 3s in the park. PS5.", tags: ['lfg', 'park', 'ps5'], user: u5, views: 15000, likes: [u1, u2, u3, u4], answers: [
+                { text: "I have a 92 OVR Paint Beast, add me.", user: u1, likes: [u2, u3, u5] },
+                { text: "Need a lock? Just hit elite 1.", user: u4, likes: [u1, u5] },
+                { text: "Let's run tonight.", user: u2, likes: [] }
             ]}
         ];
 
