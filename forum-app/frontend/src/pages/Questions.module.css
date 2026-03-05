@@ -1,0 +1,364 @@
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--surface-border);
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-style: italic;
+  transform: skewX(-8deg);
+  text-shadow: 0 0 15px rgba(255, 70, 37, 0.3);
+}
+@media (min-width: 768px) {
+  .pageTitle { font-size: 3.5rem; }
+}
+
+.highlight {
+  color: var(--accent-primary);
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.emptyState {
+  background: var(--surface-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--surface-border);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+.questionCard {
+  background: var(--surface-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--surface-border);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .questionCard {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.questionCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--accent-secondary);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom;
+}
+
+.questionCard:hover {
+  transform: translateX(5px);
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.questionCard:hover::before {
+  transform: scaleY(1);
+}
+
+/* Left Column: Stats */
+.statsColumn {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .statsColumn {
+    flex-direction: column;
+    align-items: flex-end;
+    width: 6rem;
+    gap: 0.5rem;
+  }
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .statItem {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 0.4rem;
+  }
+}
+
+.statValue {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.statLabel {
+  opacity: 0.8;
+}
+
+.statHighlight {
+  color: var(--accent-secondary);
+  font-weight: 700;
+}
+
+/* Right Column: Content */
+.contentColumn {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.questionTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent-secondary);
+  display: block;
+  transition: color 0.2s;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.questionTitle:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+}
+
+.tagsContainer {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--accent-secondary);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  text-transform: lowercase;
+}
+
+.metaData {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.metaItem svg {
+  color: var(--accent-primary);
+}
+
+/* Base buttons for this module */
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: var(--accent-primary);
+  color: #000;
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  font-style: italic;
+  transform: skewX(-10deg);
+  transition: all 0.3s;
+  box-shadow: 0 0 15px rgba(255, 70, 37, 0.4);
+}
+
+.btnPrimary:hover {
+  background-color: var(--accent-primary-hover);
+  transform: skewX(-10deg) scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 70, 37, 0.6);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid var(--accent-secondary);
+  color: var(--accent-secondary);
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  transition: all 0.2s;
+  transform: skewX(-10deg);
+}
+
+.btnSecondary:hover {
+  background-color: var(--accent-secondary);
+  color: #000;
+  transform: skewX(-10deg) translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+}
+
+/* Creation Form specific styles */
+.formContainer {
+  max-width: 48rem;
+  margin: 2.5rem auto 0;
+  background: var(--surface-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--surface-border);
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.glowPrimary {
+  position: absolute;
+  top: -4rem;
+  right: -4rem;
+  width: 12rem;
+  height: 12rem;
+  background: radial-gradient(circle, rgba(255,70,37,0.3) 0%, transparent 70%);
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.textareaField {
+  width: 100%;
+  min-height: 180px;
+  padding: 1.25rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--surface-border);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  border-radius: 4px;
+}
+
+.textareaField:focus {
+  outline: none;
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.errorBox {
+  background-color: rgba(255, 51, 51, 0.1);
+  border: 1px solid var(--error);
+  color: var(--error);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.inputLabel {
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+}
+
+.inputField {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--surface-border);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  border-radius: 4px;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+}

@@ -1,0 +1,10 @@
+/* App global container if necessary, but we'll manage layout per page */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
